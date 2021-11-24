@@ -83,7 +83,7 @@ export class UserService {
   }
 
   ledger(data: LedgerRequest): Observable<LedgerResponse> {
-    return this.http.post<LedgerResponse>(`${this.apiUrl}/Sam/ledg`, data, {
+    return this.http.post<LedgerResponse>(`${this.apiUrl}/Sam/ledgercreate`, data, {
       // observe: 'response',
       // withCredentials: true
     });

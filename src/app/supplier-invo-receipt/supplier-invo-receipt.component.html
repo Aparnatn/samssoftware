@@ -1,11 +1,11 @@
 <head>
-  
+
   <style>
     body
     {
       font-family: 'Times New Roman', Times, serif;
     }
-  </style>  
+  </style>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
       <br>
     </div>
 
-      <form (ngSubmit)="onSubmit1()" action="reports">
+      <form [formGroup]="SupplierInvoReceiptForm" (ngSubmit)="onSubmit()">
         <div class="container-sm ">
 
         <div class="row">
@@ -25,7 +25,7 @@
 
           </div>
           <div class="col-sm-7" >
-            <input type="date"  style="border-radius:12px;" class="form-control" placeholder="" name="pswd">
+            <input type="date"  style="border-radius:12px;" class="form-control" placeholder="" formControlName="date">
           </div>
         </div>
 
@@ -38,7 +38,7 @@
           </div>
 
           <div class="col-sm-7" >
-            <input type="date"  style="border-radius:12px;" class="form-control" placeholder="" name="">
+            <input type="date"  style="border-radius:12px;" class="form-control" placeholder="" formControlName="report_date">
           </div>
         </div>
 
@@ -67,16 +67,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr  *ngFor = "let supplier of supplierInvoRcpt">
                 <td></td>
                 <td></td>
+                <td>{{supplier.date}}</td>
+                <td>{{supplier.internal_ref_no}}</td>
+                <td>{{supplier.supp_name}}</td>
                 <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{supplier.total}}</td>
+                <td>{{supplier.sales_ex1}}</td>
+                <td>{{supplier.user_id}}</td>
               </tr>
               <tr>
                 <td></td>
@@ -120,15 +120,10 @@
 
 
       </div>
-        <script>
-        function myFunction() {
-          var x = document.getElementById("myFile");
-          x.disabled = true;
-        }
-        </script>
+
     <br>
         <div class="container">
-        <button type="submit" onclick="myFunction()" style="border-radius: 12px;" class="btn btn-lg btn-block">Submit</button>
+        <button type="submit"  style="border-radius: 12px;" class="btn btn-lg btn-block">Submit</button>
       </div>
       </form>
 

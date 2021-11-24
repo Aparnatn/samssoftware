@@ -1,74 +1,76 @@
 <head>
-  
+
   <style>
     body
     {
       font-family: 'Times New Roman', Times, serif;
     }
-  </style>  
+  </style>
 </head>
 <body>
     <section style="padding-top:30px">
     <div class="container">
-  
+
       <button type="button"  style="border-radius:12px;" class="btn  btn-sm btn-block"><b><p style="font-size: 30px;">Job Statement</p></b></button>
       <br>
     </div>
-  
-      <form action="">
+
+      <form [formGroup]="JobStatementForm" (ngSubmit)="onSubmit()">
         <div class="container-sm ">
-  
+
         <div class="row">
           <div class="col-sm-5" >
             <label class="form-control"  style="border-radius:12px;padding: 10px; "> Date </label>
-           
+
           </div>
           <div class="col-sm-7" >
-            <input type="text"  style="border-radius:12px;" class="form-control" placeholder="" name="pswd">
+            <input type="text"  style="border-radius:12px;" class="form-control" placeholder="" formControlName="date">
           </div>
         </div>
-  
-  
-  
+
+
+
           <div class="row" style="padding-top: 5px;">
           <div class="col-sm-5" >
             <label class="form-control"  style="border-radius:12px;padding: 10px; "> Job </label>
-            
+
           </div>
-  
+
           <div class="col-sm-7" >
-            <input type="text"  style="border-radius:12px;" class="form-control" placeholder="" name="">
+            <input type="text"  style="border-radius:12px;" class="form-control" placeholder="" formControlName="name">
           </div>
         </div>
         <div class="row" style="padding-top: 5px;">
           <div class="col-sm-5" >
-            <label class="form-control"  style="border-radius:12px;padding: 10px; "> Date </label>
-            
+            <label class="form-control"  style="border-radius:12px;padding: 10px; ">Report Date </label>
+
           </div>
-  
+
           <div class="col-sm-7" >
-            <input type="date"  style="border-radius:12px;" class="form-control" placeholder="" name="">
+            <input type="date"  style="border-radius:12px;" class="form-control" formControlName="report_date">
           </div>
         </div>
-  
+
         <div class="row" style="padding-top: 5px;">
           <div class="col-sm-5" >
             <label class="form-control"  style="border-radius:12px;padding: 10px; "> Period </label>
-            
+
           </div>
-  
+
           <div class="col-sm-7" >
             <input type="text"  style="border-radius:12px;" class="form-control" placeholder="" name="">
           </div>
         </div>
-  
-  
-  
-        <br><br>
-  
-  
+
+
+
+        <br>
         <div class="container">
-  
+          <button type="submit" onclick="myFunction()" style="border-radius: 12px;" class="btn btn-lg btn-block">Submit</button>
+        </div>
+        <br>
+        <div class="container">
+
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -78,152 +80,86 @@
                 <th>Job Discription</th>
                 <th>Income Amount</th>
                 <th>Expence Amount</th>
-                
+
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr  *ngFor="let cash of Cash;">
                 <td></td>
+                <td>{{ cash.id }}</td>
+                <td>{{ cash.job1 }}</td>
                 <td></td>
+                <td>{{ cash.total }}</td>
                 <td></td>
-  
-                <td></td>
-                <td></td>
-                
-                
+
+
               </tr>
-              <tr>
+              <tr  *ngFor="let cash1 of Cash;">
                 <td></td>
+                <td>{{ cash1.id }}</td>
+                <td>{{ cash1.job2 }}</td>
                 <td></td>
+                <td>{{ cash1.amount2 }}</td>
                 <td></td>
-  
-                <td></td>
-                <td></td>
-                <td></td>
-                
+
               </tr>
-              <tr>
+              <tr  *ngFor="let cash2 of PCash;">
+                <td></td>
+                <td>{{ cash2.id }}</td>
+                <td>{{ cash2.job1 }}</td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
-  
-                <td></td>
-                <td></td>
-                
+                <td>{{ cash2.total }}</td>
+
               </tr>
-              <tr>
+              <tr  *ngFor="let cash3 of PCash;">
+                <td></td>
+                <td>{{ cash3.id }}</td>
+                <td>{{ cash3.job2 }}</td>
                 <td></td>
                 <td></td>
-                <td></td>
-  
-                <td></td>
-                <td></td>
-                <td></td>
-                
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-  
-                <td></td>
-                <td></td>
-                
-              </tr>
-  
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-  
-                <td></td>
-                <td></td>
-                <td></td>
-                
+                <td>{{ cash3.amount2 }}</td>
+
               </tr>
               <tr>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-  
+
                 <td></td>
                 <td></td>
-                
-                
+
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-  
-                <td></td>
-                <td></td>
-                <td></td>
-                
-                
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-  
-                <td></td>
-                <td></td>
-                
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-  
-                <td></td>
-                <td></td>
-                <td></td>
-                
-              </tr>
-              
-  
-  
-  
-  
+
+
             </tbody>
           </table>
         </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
       </div>
         <br>
     <div class="container ">
-  
-  
+
+
       </div>
-        <script>
-        function myFunction() {
-          var x = document.getElementById("myFile");
-          x.disabled = true;
-        }
-        </script>
+
     <br>
-        <div class="container">
-        <button type="submit" onclick="myFunction()" style="border-radius: 12px;" class="btn btn-lg btn-block">Submit</button>
-      </div>
+
       </form>
-  
-  
+
+
     </section>
     </body>
-  
-  
-  
+
+
+
 

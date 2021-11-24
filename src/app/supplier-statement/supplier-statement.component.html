@@ -1,11 +1,11 @@
 <head>
-  
+
   <style>
     body
     {
       font-family: 'Times New Roman', Times, serif;
     }
-  </style>  
+  </style>
 </head>
 <body>
     <section style="padding-top:30px">
@@ -15,7 +15,7 @@
       <br>
     </div>
 
-      <form (ngSubmit)="onSubmit1()" action="reports">
+      <form [formGroup]="supplierAccountForm" (ngSubmit)="onSubmit()">
         <div class="container-sm ">
 
         <div class="row">
@@ -47,7 +47,7 @@
           </div>
 
           <div class="col-sm-7" >
-            <input type="date"  style="border-radius:12px;" class="form-control" placeholder="" name="">
+            <input type="date"  style="border-radius:12px;" class="form-control" placeholder="" formControlName="date">
           </div>
         </div>
 
@@ -58,7 +58,7 @@
           </div>
 
           <div class="col-sm-7" >
-            <input type="date"  style="border-radius:12px;" class="form-control" placeholder="" name="">
+            <input type="date"  style="border-radius:12px;" class="form-control" placeholder="" formControlName="report_date">
           </div>
         </div>
 
@@ -82,36 +82,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr   *ngFor="let supplierAcc of supplierAcc;">
                 <td></td>
+                <td>{{supplierAcc.date }}</td>
+                <td>{{supplierAcc.internal_ref_no }}</td>
                 <td></td>
-                <td></td>
-
-
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{supplierAcc.invoice_amt1 }}</td>
+                <td>{{supplierAcc.tick_space1 }}</td>
+                <td>{{supplierAcc.balance_amt1 }}</td>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
 
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
 
             </tbody>
           </table>
@@ -131,15 +112,10 @@
 
 
       </div>
-        <script>
-        function myFunction() {
-          var x = document.getElementById("myFile");
-          x.disabled = true;
-        }
-        </script>
+
     <br>
         <div class="container">
-        <button type="submit" onclick="myFunction()" style="border-radius: 12px;" class="btn btn-lg btn-block">Submit</button>
+        <button type="submit"  style="border-radius: 12px;" class="btn btn-lg btn-block">Submit</button>
       </div>
       </form>
 

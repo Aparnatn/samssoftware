@@ -452,3 +452,32 @@ export interface SalesReceiptResponse {
   id:number,
 
 }
+export interface AllJournalRequest{
+  date:string,
+  report_date:string,
+}
+export interface AllJournalResponse{
+  id:number,
+}
+export interface ItemStatementRequest{
+  date:string,
+  report_date:string,
+}
+export interface ItemStatementResponse{
+  id:number,
+}
+export interface JobStatementRequest{
+  date:string,
+  report_date:string,
+}
+export interface JobStatementResponse{
+  id:number,
+}
+export interface StockAdjustmentRequest{
+  date:string,
+  report_date:string,
+}
+export interface StockAdjustmentResponse{
+  id:number,
+}
+

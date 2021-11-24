@@ -70,6 +70,21 @@ import { CompanyeditComponent } from './companyedit/companyedit.component';
 import { CompanydeleteComponent } from './companydelete/companydelete.component';
 import { CookieModule } from 'ngx-cookie';
 import { UserlistComponent } from './userlist/userlist.component'
+import { AllJournalEntryComponent } from './all-journal-entry/all-journal-entry.component';
+import { SupplierOutstandComponent } from './supplier-outstand/supplier-outstand.component';
+import { SupplierInvoiceComponent } from './supplier-invoice/supplier-invoice.component';
+import { SupplierInvoReceiptComponent } from './supplier-invo-receipt/supplier-invo-receipt.component';
+import { SupplierMasterDataComponent } from './supplier-master-data/supplier-master-data.component';
+import { StockAdjustmentComponent } from './stock-adjustment/stock-adjustment.component';
+import { StockBalanceComponent } from './stock-balance/stock-balance.component';
+import { StockMasterDataComponent } from './stock-master-data/stock-master-data.component';
+import { ItemStatementComponent } from './item-statement/item-statement.component';
+import { JobMasterComponent } from './job-master/job-master.component';
+import { JobStatementComponent } from './job-statement/job-statement.component';
+import { LedgerBalanceComponent } from './ledger-balance/ledger-balance.component';
+import { LedgerJournalComponent } from './ledger-journal/ledger-journal.component';
+import { LedgerMasterdataComponent } from './ledger-masterdata/ledger-masterdata.component';
+import { PaymentHistoryComponent } from './payment-history/payment-history.component';
 
 @NgModule({
   declarations: [
@@ -138,6 +153,28 @@ import { UserlistComponent } from './userlist/userlist.component'
     CustomerEditComponent,
     LedgereditComponent,
     EmployeeEditComponent,
+    AllJournalEntryComponent,
+    SupplierOutstandComponent,
+    SupplierInvoiceComponent,
+    SupplierOutstandComponent,
+    SupplierOutstandComponent,
+    SupplierStatementComponent,
+    SupplierInvoReceiptComponent,
+    SupplierMasterDataComponent,
+    StockAdjustmentComponent,
+    StockBalanceComponent,
+    StockMasterDataComponent,
+    LedgereditComponent,
+    EmployeeEditComponent,
+    ItemEditComponent,
+    ItemStatementComponent,
+    JobMasterComponent,
+    JobStatementComponent,
+    LedgerBalanceComponent,
+    LedgerJournalComponent,
+    LedgerMasterdataComponent,
+    PayrollComponent,
+    PaymentHistoryComponent,
   ],
   imports: [
     BrowserModule,

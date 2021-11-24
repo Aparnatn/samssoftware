@@ -82,12 +82,7 @@ export class UserService {
     });
   }
 
-  ledger(data: LedgerRequest): Observable<LedgerResponse> {
-    return this.http.post<LedgerResponse>(`${this.apiUrl}/Sam/ledgercreates`, data, {
-      // observe: 'response',
-      // withCredentials: true
-    });
-  }
+
 
   ledgerstatement(data: LedgerStatementRequest): Observable<LedgerStatementResponse> {
     return this.http.post<LedgerStatementResponse>(`${this.apiUrl}/goledgers_statement`, data, {

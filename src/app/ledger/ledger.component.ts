@@ -44,8 +44,8 @@ date:"",
   }
   onSubmit1(): void {
 
-    this.service.ledger(this.LedgerForm.value,).subscribe((data,)=>{
-      console.log(data);});
+    // this.service.ledger(this.LedgerForm.value,).subscribe((data,)=>{
+    //   console.log(data);});
       this.router.navigate(['/grand-hyper']);
   }
 }
